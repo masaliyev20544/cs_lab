@@ -10,9 +10,10 @@ int main(void)
 {
     int sum = 0;
 
-    int a, b;
+    int a, b, k;
     scanf("%d", &a);
     scanf("%d", &b);
+    scanf("%d", &k);
 
     if (a >= b) 
     {    
@@ -21,13 +22,13 @@ int main(void)
 
         for (; a <= c; a++)
         {
-            if (a % 6 == 0) 
+            if (a % k == 0) 
             sum += a;
         }
     } else {
         for(; a <= b; a++) 
         {
-            if (a % 6 == 0) 
+            if (a % k == 0) 
             sum += a;
         }
     }
