@@ -1,16 +1,12 @@
 #include <stdio.h>
 
-int main(void) {
-     
-    char string[1000];
-    int countWord = 1;
+int main() {
+	char str[1002];
+	int res = 1;
+	fgets(str, 1001, stdin);
 
-    fgets(string, sizeof(string), stdin);
-
-    for (int i = 0; string[i] != '\0' && string[i] != '\n'; i++) {
-        if (string[i] == '#') {
-            countWord++;
-        }
-    }
-    printf("The num. of words >> %d", countWord);
+	for (int i = 0; str[i] != '\0'; i++)
+		if (str[i] == '#') res++;
+	
+	printf("%d\n", res);
 }

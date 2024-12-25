@@ -1,15 +1,19 @@
 #include <stdio.h>
 
-int main(void) {
-     
-    char string[1000];
+int main() {
+	char str[1002], newstr[1002];
+	int i = 0;
+	fgets(str, sizeof(str), stdin);
+	while (str[i] != '\0') {
+		if (str[i] == '#') {
+			newstr[i] = '_';
+		} else {
+			newstr[i] = str[i];
+		}
+		i++;
+	}
+	newstr[i] = '\0';
+	printf("%s\n", newstr);
 
-    fgets(string, sizeof(string), stdin);
-
-    for (int i = 0; string[i] != '\0' && string[i] != '\n'; i++) {
-        if (string[i] == '#') {
-            string[i] = '_';
-        }
-    }
-    printf("%s", string);
+	return 0;
 }

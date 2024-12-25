@@ -1,15 +1,23 @@
 #include <stdio.h>
 
-int main(void) {
-    
-    char input[1000];
-    int counter = 0;
+int main() {
+	
+	char str[1002];
+	int length = 0;
+	int i = 0;
+	fgets(str, sizeof(str), stdin);
+	while (str[i] != '\0') {
+		if (str[i] != ' ') {
+			length++;
+		}
+		i++;
+	}
 
-    fgets(input, sizeof(input), stdin);
+	if (str[i - 1] == '\n') {
+		length--;
+	}
 
-    while (input[counter] != '\0' && input[counter] != '\n') {
-        counter++;
-    }
+	printf("%d\n", length);
 
-    printf("The length >> %d\n", counter);
+	return 0;
 }
